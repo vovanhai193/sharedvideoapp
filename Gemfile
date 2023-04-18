@@ -7,7 +7,6 @@ gem "sprockets-rails"
 gem 'pg', '~> 1.4', '>= 1.4.6'
 gem "puma", "~> 5.0"
 gem "importmap-rails"
-gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -17,6 +16,9 @@ gem "devise", "4.9.2"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "pry"
+  gem 'faker'
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -29,4 +31,6 @@ group :test do
   gem "webdrivers"
   gem "rspec"
   gem "rspec-rails"
+  gem 'rails-controller-testing',  '~> 1.0.1',  require: false
+  gem 'shoulda-matchers',          '~> 3.1.1',  require: false
 end
