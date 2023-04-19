@@ -10,7 +10,7 @@ body{
 }
 
 .video-list {
-  margin-top: 30px;
+  margin-bottom: 20px;
 
   .video-title {
     font-weight: bold;
@@ -29,6 +29,7 @@ body{
 }
 
 .pagination {
+  margin-bottom: 20px;
   border-left: 1px solid #ddd;
   .first{
       padding : 0;
