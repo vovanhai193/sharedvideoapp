@@ -16,9 +16,9 @@ module VideoService
       video
     end
 
-    private
+    attr_reader :video
 
-    attr_accessor :video
+    private
 
     def youtube_id
       match = video.youtube_url.match(YOUTUBE_URL_REGEX)
