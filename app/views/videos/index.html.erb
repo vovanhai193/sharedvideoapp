@@ -10,7 +10,7 @@
             <p class='text-left'><span class="video-title"><%= video.title %></span></p>
             <p class='text-left'><span>Shared By:</span> <%= video.user.email %> </p>
             <p class='text-left'><span>Description:</span> </p>
-            <p class='text-left'><%= video.description %> </p>
+            <p class='text-left'><%= truncate(video.description, length: 500) %> </p>
           </td>
         </tr>
         <% end %>
