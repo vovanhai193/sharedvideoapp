@@ -1,0 +1,20 @@
+<div class="video-list">
+  <table class="table">
+    <tbody>
+      <% @videos.each do |video| %>
+        <tr>
+          <td class="col-sm-2">
+            <iframe width="700" height="315" src="https://www.youtube.com/embed/<%=video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+          </td>
+          <td class="col-sm-3">
+            <p class='text-left'><span class="video-title"><%= video.title %></span></p>
+            <p class='text-left'><span>Shared By:</span> <%= video.user.email %> </p>
+            <p class='text-left'><span>Description:</span> </p>
+            <p class='text-left'><%= video.description %> </p>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+  <%= paginate @videos %>
+<div>
