@@ -65,3 +65,21 @@ body{
 .notice{
   color: green;
 }
+
+.btn-like{
+  cursor: pointer;
+  outline: 0;
+  color: #AAA;
+}
+
+.btn-like:focus {
+  outline: none;
+}
+
+.green{
+  color: green;
+}
+
+.red{
+  color: red;
+}

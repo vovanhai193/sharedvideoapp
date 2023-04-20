@@ -8,8 +8,16 @@
           </td>
           <td class="col-sm-3">
             <p class='text-left'><span class="video-title"><%= video.title %></span></p>
-            <p class='text-left'><span>Shared By:</span> <%= video.user.email %> </p>
-            <p class='text-left'><span>Description:</span> </p>
+            <p class='text-left'><span>Shared By:</span> <%= video.user.email %></p>
+            <p class='text-left'>
+              <%= link_to like_video_path(video), data: { "turbo-method": :post }, class: "btn-like #{'green disabled' if current_user && video.liked_by?(current_user)}" do %>
+                <i class="fa fa-thumbs-up fa-lg" aria-hidden="true"><%= video.like_count %></i>
+              <% end %>
+              <%= link_to dislike_video_path(video), data: { "turbo-method": :post }, class: "btn-like #{'red disabled' if current_user && video.disliked_by?(current_user)}" do %>
+                <i class="fa fa-thumbs-down fa-lg" aria-hidden="true"><%= video.unlike_count %></i>
+              <% end %>
+            </p>
+            <p class='text-left'><span>Description:</span></p>
             <p class='text-left'><%= truncate(video.description, length: 500) %> </p>
           </td>
         </tr>
